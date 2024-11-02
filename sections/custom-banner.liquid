@@ -1,0 +1,72 @@
+<div class="custom-banner">
+  <div class="custom-banner-top-image-wrapper d-none d-md-block">
+    {{ section.settings.custom_banner_top_image | image_url: width: auto | image_tag }}
+  </div>
+  <div class="custom-banner-bottom d-block d-md-flex">
+    <div class="custom-banner-info">
+      <h2 class="custom-banner-header text-center text-md-left">{{ section.settings.custom_banner_header }}</h2>
+      <div class="{% if section.settings.custom_banner_description_small_devices != blank %}d-none d-md-block {% endif %}custom-banner-description text-center text-align-md-left">
+        {{ section.settings.custom_banner_description }}
+      </div>
+      {% if section.settings.custom_banner_description_small_devices != blank %}
+        <div class="d-block d-md-none custom-banner-description text-center text-align-md-left">
+          {{ section.settings.custom_banner_description_small_devices }}
+        </div>
+      {% endif %}
+    </div>
+    <div class="custom-banner-bottom-image-wrapper">
+      {{ section.settings.custom_banner_bottom_image | image_url: width: auto | image_tag }}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Custom Banner",
+  "tag": "section",
+  "class": "Custom Banner",
+  "limit": 1,
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "custom_banner_top_image",
+      "label": "Banner Top Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "custom_banner_bottom_image",
+      "label": "Banner Bottom Image"
+    },
+    {
+      "type": "text",
+      "id": "custom_banner_header",
+      "label": "Banner Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "custom_banner_description",
+      "label": "Banner Description"
+    },
+    {
+      "type": "richtext",
+      "id": "custom_banner_description_small_devices",
+      "label": "Description for smaller devices"
+    },
+    {
+      "type": "text",
+      "id": "custom_banner_button_text",
+      "label": "Button Text"
+    },
+    {
+      "type": "url",
+      "id": "custom_banner_button_link",
+      "label": "Button Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Banner"
+    }
+  ]
+}
+{% endschema %}

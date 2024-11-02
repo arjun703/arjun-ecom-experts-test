@@ -1,0 +1,126 @@
+.custom-banner-top-image-wrapper img, .custom-banner-bottom-image-wrapper img{
+    width: 100%;
+    height: auto;
+}
+
+.custom-banner-bottom-image-wrapper img{
+    height: 264px;
+    width: auto;
+    object-fit: cover;
+    max-width: 100%;
+}
+
+.d-flex{
+    display: flex;
+}
+
+.d-block{
+    display: block;
+}
+
+.d-none{
+    display: none;
+}
+
+.custom-banner-header{
+    font-family: Jost;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 30px;
+}
+
+.custom-banner-description{
+    font-family: Jost;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20.8px;
+    text-align: center;
+    color: black;    
+}
+
+.custom-banner-button{
+    width:193pxpx;
+    height: 45pxpx;
+    top: 337px;
+    left: 90.78px;
+    padding: 13px 20px 13px 20px;
+    gap: 10px;
+    opacity: 0px;
+    
+}
+
+.custom-banner-button-text{
+    font-family: Jost;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20.48px;
+    text-align: center;    
+}
+
+.align-items-center{
+    align-items: center;
+}
+
+.justify-content-center{
+    justify-content: center;
+}
+
+.g-5{
+    gap: 5px;
+}
+
+.text-center{
+    text-align: center;
+}
+
+/* Responsive */
+
+/* Tablet and desktop styling */
+@media (min-width: 768px) {
+    .d-md-block{
+        display: block;
+    }
+    .d-md-none{
+        display: none;
+    }
+    .d-md-flex{
+        display: flex;
+    }
+    .text-md-left{
+        text-align: left;
+    }
+    .custom-banner-header{
+        font-family: Jost;
+        font-size: 70px;
+        font-weight: 500;
+        line-height: 70px;
+        text-align: left;
+    }
+    
+    .custom-banner-description{
+        font-family: Jost;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 28px;
+        text-align: left;
+    }
+    
+    .custom-banner-button{
+        width: 220px;
+        height: 50px;
+        gap: 0px;
+        background-color: #000000;
+        color: white;
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+    
+    .custom-banner-button-text{
+        font-family: Jost;
+        font-size: 16px;
+        color:white;
+        font-weight: 400;
+        line-height: 20.48px;
+    }
+    
+}
