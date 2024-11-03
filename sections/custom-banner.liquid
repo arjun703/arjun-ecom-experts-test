@@ -4,12 +4,12 @@
   </div>
   <div class="custom-banner-bottom d-block d-md-flex">
     <div class="custom-banner-info">
-      <h2 class="custom-banner-header text-center text-md-left">{{ section.settings.custom_banner_header }}</h2>
+      <div class="custom-banner-header text-center text-md-left">{{ section.settings.custom_banner_header }}</div>
       <div class="{% if section.settings.custom_banner_description_small_devices != blank %}d-none d-md-block {% endif %}custom-banner-description text-center text-align-md-left">
         {{ section.settings.custom_banner_description }}
       </div>
       {% if section.settings.custom_banner_description_small_devices != blank %}
-        <div class="d-block d-md-none custom-banner-description text-center text-align-md-left">
+        <div class="d-flex justify-content-center d-md-none custom-banner-description text-center">
           {{ section.settings.custom_banner_description_small_devices }}
         </div>
       {% endif %}
@@ -30,8 +30,10 @@
       {{ section.settings.custom_banner_bottom_image | image_url: width: auto | image_tag }}
     </div>
   </div>
-  <div class="custom-banner-bottom-text-wrapper">
-    <span class="custom-banner-bottom-text"></span>
+  <div class="custom-banner-bottom-text-wrapper d-flex justify-content-center align-items-center">
+    <span class="custom-banner-bottom-text">
+      {{ section.settings.custom_banner_bottom_text }}
+    </span>
   </div>
   <div class="custom-banner-button-wrapper d-flex justify-content-center d-md-none">
     <a class="button d-flex g-20 button-primary align-items-center" href="#">

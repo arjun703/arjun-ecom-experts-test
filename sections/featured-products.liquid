@@ -1,0 +1,69 @@
+<div class="featured-products page-width"></div>
+
+{% schema %}
+{
+  "name": "Custom Featured Products",
+  "tag": "section",
+  "limit": 1,
+  "settings": [
+    {
+      "type": "range",
+      "id": "popup_point_offset_from_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Popup point offset from top",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "popup_point_offset_from_left",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Popup point offset from left",
+      "default": 50
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product_block",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Choose Product"
+        },
+        {
+          "type": "range",
+          "id": "popup_point_offset_from_top",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "label": "Popup point offset from top",
+          "default": 50
+        },
+        {
+          "type": "range",
+          "id": "popup_point_offset_from_left",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "label": "Popup point offset from left",
+          "default": 50
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Featured Products"
+    }
+  ]
+}
+{% endschema %}
