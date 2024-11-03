@@ -18,7 +18,8 @@
         "custom_banner_description": "<p>Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season.</p>",
         "custom_banner_description_small_devices": "<p>Discover Joy: Your Ultimate Holiday Gift Destination.</p>",
         "custom_banner_button_text": "SHOP NOW",
-        "custom_banner_button_link": "shopify://collections"
+        "custom_banner_button_link": "shopify://collections",
+        "custom_banner_bottom_text": "SUSTAINABLE, ETHICALLY MADE ACTIVEWEAR"
       }
     }
   },
