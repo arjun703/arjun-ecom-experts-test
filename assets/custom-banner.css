@@ -105,6 +105,17 @@
     padding: 13px 20px 13px 20px !important;
 }
 
+.custom-banner-bottom-text-wrapper{
+    background: #F5F5F5;
+    font-family: Jost;
+}
+.custom-banner-bottom-text{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 13.42px;
+    text-align: center;
+}
+
 /* Responsive */
 
 /* Tablet and desktop styling */
