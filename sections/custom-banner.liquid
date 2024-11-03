@@ -13,11 +13,33 @@
           {{ section.settings.custom_banner_description_small_devices }}
         </div>
       {% endif %}
+      <div class="custom-banner-button-wrapper-desktop d-none d-md-block">
+        <a class="button button-primary" href="#">
+          <span class="d-flex g-20 align-items-center">
+            <span class="custom-banner-button-label">SHOP NOW</span>
+            <span>
+              <svg width="26" height="13" viewBox="0 0 26 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.999512 5.75L0.249512 5.75L0.249512 7.25L0.999512 7.25L0.999512 5.75ZM25.5298 7.03033C25.8227 6.73744 25.8227 6.26257 25.5298 5.96967L20.7569 1.1967C20.464 0.903807 19.9891 0.903807 19.6962 1.1967C19.4033 1.48959 19.4033 1.96447 19.6962 2.25736L23.9389 6.5L19.6962 10.7426C19.4033 11.0355 19.4033 11.5104 19.6962 11.8033C19.9891 12.0962 20.464 12.0962 20.7569 11.8033L25.5298 7.03033ZM0.999512 7.25L24.9995 7.25L24.9995 5.75L0.999512 5.75L0.999512 7.25Z" fill="#F5F5F5"/>
+              </svg>
+            </span>
+          </span>
+        </a>
+      </div>
     </div>
     <div class="custom-banner-bottom-image-wrapper">
       {{ section.settings.custom_banner_bottom_image | image_url: width: auto | image_tag }}
     </div>
-    <h1>Hello</h1>
+  </div>
+  <div class="custom-banner-footer-text"></div>
+  <div class="custom-banner-button-wrapper d-flex justify-content-center d-md-none">
+    <a class="button d-flex g-20 button-primary align-items-center" href="#">
+      <span class="custom-banner-button-label">SHOP NOW</span>
+      <span>
+        <svg width="26" height="13" viewBox="0 0 26 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0.999512 5.75L0.249512 5.75L0.249512 7.25L0.999512 7.25L0.999512 5.75ZM25.5298 7.03033C25.8227 6.73744 25.8227 6.26257 25.5298 5.96967L20.7569 1.1967C20.464 0.903807 19.9891 0.903807 19.6962 1.1967C19.4033 1.48959 19.4033 1.96447 19.6962 2.25736L23.9389 6.5L19.6962 10.7426C19.4033 11.0355 19.4033 11.5104 19.6962 11.8033C19.9891 12.0962 20.464 12.0962 20.7569 11.8033L25.5298 7.03033ZM0.999512 7.25L24.9995 7.25L24.9995 5.75L0.999512 5.75L0.999512 7.25Z" fill="#F5F5F5"/>
+        </svg>
+      </span>
+    </a>
   </div>
 </div>
 
@@ -62,6 +84,11 @@
       "type": "url",
       "id": "custom_banner_button_link",
       "label": "Button Link"
+    },
+    {
+      "type": "url",
+      "id": "custom_banner_bottom_text",
+      "label": "Banner Bottom Text"
     }
   ],
   "presets": [

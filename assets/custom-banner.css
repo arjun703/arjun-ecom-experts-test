@@ -1,3 +1,7 @@
+.custom-banner{
+    position: relative;
+}
+
 .custom-banner-top-image-wrapper img, .custom-banner-bottom-image-wrapper img{
     width: 100%;
     height: auto;
@@ -49,12 +53,12 @@
     
 }
 
-.custom-banner-button-text{
+.custom-banner-button-label{
     font-family: Jost;
     font-size: 16px;
     font-weight: 400;
     line-height: 20.48px;
-    text-align: center;    
+    text-align: center; 
 }
 
 .align-items-center{
@@ -65,12 +69,40 @@
     justify-content: center;
 }
 
+.justify-content-between{
+    justify-content: space-between;
+}
 .g-5{
     gap: 5px;
 }
 
+.g-10{
+    gap: 10px;
+}
+
+.g-15{
+    gap: 15px;
+}
+
+.g-20{
+    gap:20px;
+}
+
 .text-center{
     text-align: center;
+}
+
+
+.custom-banner-button-wrapper{
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+}
+
+.custom-banner-button-wrapper a{
+    width:193px!important;
+    height: 45px!important;
+    padding: 13px 20px 13px 20px !important;
 }
 
 /* Responsive */
@@ -105,17 +137,7 @@
         text-align: left;
     }
     
-    .custom-banner-button{
-        width: 220px;
-        height: 50px;
-        gap: 0px;
-        background-color: #000000;
-        color: white;
-        text-transform: uppercase;
-        text-decoration: none;
-    }
-    
-    .custom-banner-button-text{
+    .custom-banner-button-label{
         font-family: Jost;
         font-size: 16px;
         color:white;

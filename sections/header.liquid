@@ -1,1 +1,134 @@
-<div>Header</div>
+<header>
+  <nav class="navbar justify-content-between align-items-center">
+    <div class="menu-icon open-icon d-block d-md-none" id="menuIcon">&#9776;</div>
+    <div class="menu-icon close-icon" id="closeBtn">&times;</div>
+    <div class="logo">Logo</div>
+    <div class="text">Some Text in the Middle</div>
+    <div class="choose-gift"><a href="#">Choose Gift</a></div>
+  </nav>
+</header>
+
+<!-- Sidebar for Mobile -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-content">
+    <div class="logo">Logo</div>
+    <div class="text">Some Text in the Middle</div>
+    <div class="choose-gift"><a href="#">Choose Gift</a></div>
+  </div>
+</div>
+
+<style>
+  header {
+    width: 100%;
+  }
+
+  header .close-icon {
+    display: none;
+  }
+
+  .sidebar-open .close-icon {
+    display: block;
+  }
+  .sidebar-open .open-icon {
+    display: none;
+  }
+
+  /* Desktop Navbar */
+  .navbar {
+    display: flex;
+    height: 65px;
+    padding: 1em;
+    background-color: #f7f7f7;
+    position: relative;
+  }
+
+  .navbar .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+
+  .navbar .text {
+    font-size: 1em;
+  }
+
+  .navbar .choose-gift a {
+    text-decoration: none;
+  }
+
+  .menu-icon {
+    cursor: pointer;
+    font-size: 1.5em;
+  }
+
+  /* Sidebar (hidden by default) */
+  .sidebar {
+    position: fixed;
+    top: 65px;
+    left: -100%;
+    width: 70%;
+    background-color: #f2f2f2;
+    height: 100%;
+    transition: left 0.3s ease;
+    padding: 2em 1em;
+  }
+
+  .sidebar .close-btn {
+    font-size: 2em;
+    cursor: pointer;
+    margin-bottom: 1em;
+  }
+
+  .sidebar .sidebar-content .choose-gift a {
+    text-decoration: none;
+  }
+
+  .sidebar-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+  }
+
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .navbar {
+      justify-content: flex-start;
+    }
+
+    .navbar .text,
+    .navbar .choose-gift {
+      display: none;
+    }
+
+    .navbar .logo {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .sidebar {
+      width: 100%;
+    }
+
+    .sidebar-open .sidebar {
+      left: 0;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const menuIcon = document.getElementById('menuIcon');
+    const sidebar = document.getElementById('sidebar');
+    const closeBtn = document.getElementById('closeBtn');
+
+    // Open Sidebar
+    menuIcon.addEventListener('click', function () {
+      document.body.classList.add('sidebar-open');
+    });
+
+    // Close Sidebar
+    closeBtn.addEventListener('click', function () {
+      document.body.classList.remove('sidebar-open');
+    });
+  });
+</script>
