@@ -29,8 +29,8 @@
           "type": "product_block",
           "settings": {
             "product": "black-leather-bag",
-            "popup_point_offset_from_top": 56,
-            "popup_point_offset_from_left": 56
+            "popup_point_offset_from_top": 75,
+            "popup_point_offset_from_left": 44
           }
         },
         "product_block_ggVAcV": {
@@ -69,8 +69,8 @@
           "type": "product_block",
           "settings": {
             "product": "dark-denim-top",
-            "popup_point_offset_from_top": 20,
-            "popup_point_offset_from_left": 74
+            "popup_point_offset_from_top": 52,
+            "popup_point_offset_from_left": 68
           }
         }
       },
