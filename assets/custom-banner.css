@@ -1,3 +1,8 @@
+.choose-gift button{
+    width: 207px;
+    height: 44px;
+}
+
 .custom-banner{
     position: relative;
 }
@@ -112,7 +117,7 @@
     width: 100%;
 }
 
-.custom-banner-button-wrapper a{
+.custom-banner-button-wrapper button{
     width:193px!important;
     height: 45px!important;
     padding: 13px 20px 13px 20px !important;
@@ -317,6 +322,9 @@
     letter-spacing: -0.02em;
     text-align: left;
     flex-grow: 1;
+    display: flex;
+    align-items: center;
+    height: 100%;
     z-index: 2;
     cursor: pointer;
 }
@@ -390,9 +398,7 @@
     width: 100%;
 }
 
-.button{
-    background-color: black!important;
-}
+
 
 .product-popver-close-icon{
     cursor: pointer;
@@ -401,6 +407,79 @@
 /* end of  custom featured products */
 
 
+
+
+/* animate button */ 
+
+.button-animated-primary{
+    color: white;
+    background-color: black;
+}
+
+.button-animated-secondary{
+    background-color: yellow;
+    color:black!important;
+    fill: black!important;
+    stroke: black!important;
+}
+
+.button-animated {
+    position: relative;
+    padding: 15px 30px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space:nowrap;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    overflow: hidden; /* Hide overflow for ripple effect */
+    outline: none;
+    z-index: 1; /* Ensure the button is above the ripple */
+}
+
+
+
+.button-animated-primary:hover{
+    color:black!important;
+    fill: black!important;
+    stroke: black!important;
+}
+.button-animated-secondary:hover{
+    color:white!important;
+    fill: white!important;
+    stroke: white!important;
+}
+
+.button-animated-primary::after{
+    background-color: yellow; /* Ripple color */
+}
+.button-animated-secondary::after{
+    background-color: black; /* Ripple color */
+}
+
+.button-animated::after {
+    content: ''!important;
+    position: absolute!important;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Ripple should be below the button text */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    transform: translateX(-200%); /* Start from the left */
+    transition: transform 0.5s ease; /* Transition for the ripple effect */
+    pointer-events: none; /* Prevent pointer events on pseudo-element */
+}
+
+.button-animated:hover::after {
+    transform: translateX(0); /* Move to the right on hover */
+}
+
+.button-animated:mouseleave::after {
+    transform: translateX(-200%); /* Move back to the left on mouse leave */
+}
+
+
+/* end of animate button */
 
 
 /* Responsive */
@@ -435,8 +514,7 @@
 
     .custom-banner-header{
         font-family: Jost;
-        font-family: Jost;
-        font-size: 70px;
+        font-size: 50px;
         font-weight: 500;
         line-height: 70px;
         text-align: left;   
@@ -452,7 +530,7 @@
         margin-top: unset;
     }
 
-    .custom-banner-button-wrapper a{
+    .custom-banner-button-wrapper button{
         width: 220px;
         height: 50px;
     }
@@ -460,7 +538,6 @@
     .custom-banner-button-label{
         font-family: Jost;
         font-size: 16px;
-        color:white;
         font-weight: 400;
         line-height: 20.48px;
     }
@@ -498,7 +575,10 @@
 
 /* Tablet and desktop styling */
 @media (min-width: 1337px) {
-    .custom-featured-products{
+    .custom-container{
         width: 1337px;
+    }
+    .custom-banner-header{
+        font-size: 70px;
     }
 }    
