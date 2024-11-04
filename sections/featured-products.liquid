@@ -1,9 +1,10 @@
 <div
-  class="custom-featured-products page-width"
+  class="custom-featured-products custom-container"
   data-default-offset-top="{{ section.settings.popup_point_offset_from_top }}"
   data-default-offset-left="{{ section.settings.popup_point_offset_from_left }}"
 >
-  <div class="d-grid col-6 col-md-4">
+  <div class="featured-products-heading text-center text-md-left">{{ section.settings.heading }}</div>
+  <div class="d-grid g-5 g-md-20 col-6 col-md-4">
     {% for block in section.blocks %}
       <div class="grid-item">
         <div class="featured-product-card">
@@ -31,6 +32,11 @@
   "tag": "section",
   "limit": 1,
   "settings": [
+    {
+      "type": "text",
+      "label": "Heading",
+      "id": "heading"
+    },
     {
       "type": "range",
       "id": "popup_point_offset_from_top",
