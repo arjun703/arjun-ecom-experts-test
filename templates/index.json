@@ -37,8 +37,8 @@
           "type": "product_block",
           "settings": {
             "product": "blue-silk-tuxedo",
-            "popup_point_offset_from_top": 50,
-            "popup_point_offset_from_left": 50
+            "popup_point_offset_from_top": 64,
+            "popup_point_offset_from_left": 75
           }
         },
         "product_block_r8jhey": {
