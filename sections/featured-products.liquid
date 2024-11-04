@@ -1,10 +1,10 @@
 <div
-  class="custom-featured-products custom-container"
+  class="custom-featured-products custom-container mt-30 mt-md-40"
   data-default-offset-top="{{ section.settings.popup_point_offset_from_top }}"
   data-default-offset-left="{{ section.settings.popup_point_offset_from_left }}"
 >
   <div class="featured-products-heading text-center text-md-left">{{ section.settings.heading }}</div>
-  <div class="d-grid g-5 g-md-20 col-6 col-md-4">
+  <div class="d-grid mt-15 g-5 g-md-20 col-6 col-md-4">
     {% for block in section.blocks %}
       <div class="grid-item">
         <div class="featured-product-card">
@@ -21,10 +21,139 @@
             </svg>
           </div>
         </div>
+        {% render 'custom-quick-view', product: block.settings.product %}
       </div>
     {% endfor %}
   </div>
 </div>
+
+<script>
+  Array.from(document.querySelectorAll('.product-popover .radio-input')).forEach((radioInput) => {
+    radioInput.addEventListener('change', () => {
+      const movingIndicator = radioInput.closest('.values-wrapper').querySelector('.moving-indicator');
+      const numberOfColorOptions = Array.from(
+        movingIndicator.closest('.values-wrapper').querySelectorAll('.value-wrapper')
+      ).length;
+
+      // set width based on number of color values
+      movingIndicator.style.width = 100.0 / numberOfColorOptions + '%';
+      console.log(movingIndicator.style.width);
+      movingIndicator.style.display = 'block';
+      // move the position of movingIndicator based on selected index
+      movingIndicator.style.left =
+        ((parseInt(radioInput.getAttribute('data-index')) - 1) * 100) / numberOfColorOptions + '%';
+      console.log(movingIndicator.style.left);
+    });
+  });
+
+  const hideAllPopovers = () => {
+    Array.from(document.querySelectorAll('.product-popover')).forEach((popover) => {
+      popover.style.display = 'none';
+    });
+    if (document.body.classList.contains('modal-open')) document.body.classList.remove('modal-open');
+  };
+
+  const displayPopover = (e) => {
+    hideAllPopovers();
+    if (!document.body.classList.contains('modal-open')) document.body.classList.add('modal-open');
+    e.target.closest('.grid-item').querySelector('.product-popover').style.display = 'block';
+  };
+
+  Array.from(document.querySelectorAll('.popover-wrapper')).forEach((popoverPlusIcon) => {
+    popoverPlusIcon.addEventListener('click', (e) => {
+      displayPopover(e);
+    });
+  });
+
+  Array.from(document.querySelectorAll('.product-popver-close-icon')).forEach((popoverCloseIcon) => {
+    console.log('hello');
+    popoverCloseIcon.addEventListener('click', () => hideAllPopovers());
+  });
+
+  if (!document.querySelector('.modal-background')) {
+    const newDiv = document.createElement('div');
+    newDiv.classList.add('modal-background'); // Add the missing class
+    newDiv.innerHTML = '&nbsp;';
+    newDiv.onclick = () => hideAllPopovers();
+    console.log('init');
+    document.body.appendChild(newDiv);
+  }
+
+  Array.from(document.querySelectorAll('.product-size-selector')).forEach((selectBox) => {
+    selectBox.addEventListener('click', () => {
+      selectBox.closest('.select-box-wrapper').querySelector('.select-box-icon-wrapper').classList.toggle('active');
+    });
+  });
+
+  Array.from(document.querySelectorAll('.product-popover-form')).forEach((popoverForm) => {
+    popoverForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      popoverForm.querySelector('button').disabled = true;
+      popoverForm.querySelector('button').innerHTML = 'Please Wait...';
+      try {
+        const allVariants = {};
+        Array.from(popoverForm.closest('.product-popover').querySelectorAll('.variant-data')).forEach((vd) => {
+          allVariants[vd.getAttribute('data-variant-id')] = JSON.parse(
+            vd.getAttribute('data-variant-options').replaceAll('*', '"')
+          ).map((v) => v.trim().toLowerCase());
+        });
+
+        // Extract values from the form inputs
+        const formData = new FormData(popoverForm);
+        const formValues = [];
+        formData.forEach((value, key) => {
+          console.log(key);
+          if (key.toLowerCase().includes('color') || key.toLowerCase().includes('size'))
+            formValues.push(value.toLowerCase().trim()); // Store each value in an object
+        });
+
+        for (variantid in allVariants) {
+          const variantOptions = allVariants[variantid];
+          console.log('variant options', variantOptions);
+          if (formValues.every((formValue) => variantOptions.includes(formValue))) {
+            await addToCart(variantid, 1);
+            console.log('variant id', variantid);
+            window.location.href = '/cart';
+            break;
+          }
+        }
+      } catch (error) {
+        popoverForm.querySelector('button').disabled = false;
+        popoverForm.querySelector('button').innerHTML = 'ADD TO CART';
+        alert(error.message);
+      }
+    });
+  });
+
+  // Function to add a product variant to the cart
+  async function addToCart(variantId, quantity) {
+    // Prepare the data to be sent in the request
+    const data = {
+      id: variantId,
+      quantity: quantity,
+    };
+
+    // Use the Fetch API to make a POST request
+    const response = await fetch('/cart/add.js', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+
+    const responseJson = await response.json();
+
+    if (responseJson === null || responseJson === undefined) {
+      throw new Error('Error');
+    }
+    if (responseJson.id === null || responseJson.id === undefined) {
+      throw new Error('Error');
+    }
+    return responseJson;
+  }
+</script>
 
 {% schema %}
 {

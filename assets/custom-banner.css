@@ -167,11 +167,11 @@
 
 
 .custom-container{
-    width: 342px;
+    width: 90%;
     margin: 0 auto;
 }
 
-.custom-featured-products .grid-item{
+.custom-featured-products .featured-product-card{
     position: relative;
 }
 
@@ -182,15 +182,234 @@
     line-height: 28.8px;
 }
 
+.mt-15{
+    margin-top: 15px;
+}
+
+.mt-30{
+    margin-top: 30px;
+}
+
+.mt-20{
+    margin-top: 20px;
+}
+
+.mt-5{
+    margin-top: 5px!important;
+}
+
+.float-right{
+    text-align: right;
+}
+
+.product-popover{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    display: none;
+    max-width: 311px;
+    transform: translate(-50%, -50%);
+    background-color: white!important;
+    z-index: 999;
+    box-shadow: 0px 2px 4px 0px #00000033;
+    padding: 15px;
+}
+
+.modal-background{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8)    ;
+}
+
+.modal-open .modal-background{
+    display: block;
+}
+
+.product-popover .product-title {
+    font-family: Jost;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 19.2px;
+    text-align: left;    
+}
+
+.product-popover .product-price{
+    font-family: Lustria;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.2px;
+    text-align: left;    
+}
+
+.product-popover .product-description{
+    font-family: Jost;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 13.2px;
+    letter-spacing: -0.01em;
+    text-align: left;
+    font-family: Jost;
+}
+.product-popover .product-description p{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+
+.product-popover .image-wrapper img{
+    width: 140px;
+    height: auto;
+}
+
+
+.values-wrapper{
+    position: relative;
+}
+
+.moving-indicator{
+    position: absolute;
+    background-color: black;
+    height: 100%;
+    display: none;
+    z-index: 1;
+    transition: left 0.5s ease; /* Animation for the left property */
+}
+
+.radio-input-hidden{
+    position: absolute;
+    opacity: 0;
+    pointer-events: none; /* Prevents interaction with the input */
+}
+
+.radio-input:checked ~ label {
+    color: white; /* Example style for when the radio button is checked */
+}
+
+.option-indicator{
+    width: 5.81px;
+    height: 100%;
+    border-right: 0.5px solid black;
+    z-index: 2;
+}
+
+.value-wrapper{
+    position: relative ;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+    border-top: 0.5px solid black;
+    border-bottom: 0.5px solid black;
+    height: 40.44px;
+    border-right: 0.5px solid black;
+}
+
+.value-wrapper label{
+    font-family: Jost;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: -0.02em;
+    text-align: left;
+    flex-grow: 1;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.product-option-name{
+    font-family: Jost;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18.2px;
+    text-align: left;
+}
+
+.product-size-selector{
+    height: 40.44px;
+    width: 100%;
+    border: 0.5px solid black;
+}
+
+ /* Hide the default arrow on the select */
+ .product-size-selector {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: transparent;
+    font-size: 16px;
+    cursor: pointer;
+    padding-left: 15px;
+  }
+
+  .product-size-selector:focus-visible{
+    box-shadow: none;
+    outline: none;
+  }
+
+  /* Positioning for the icon */
+  .select-box-wrapper {
+    position: relative;
+  }
+
+  .select-box-icon-wrapper {
+    position: absolute;
+    height: 100%;
+    border-left: 0.5px solid black;
+    pointer-events: none; /* Make icon non-interactive */
+    right: 20px;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Icon rotation with transition */
+  .select-box-icon-wrapper svg {
+    transition: transform 0.3s ease; /* Smooth transition effect */
+  }
+
+  /* Rotate the icon 180 degrees on focus */
+  .select-box-icon-wrapper.active svg {
+    transform: rotate(180deg);
+  }
+
+  select option:hover {
+    background-color: black; /* Change to a slightly lighter color when hovering */
+    color: white;
+}
+
+.product-title-price-desc{
+    flex-direction: column;
+}
+
+.add-to-cart-btn{
+    width: 100%;
+}
+
+.button{
+    background-color: black!important;
+}
+
+.product-popver-close-icon{
+    cursor: pointer;
+}
+
 /* end of  custom featured products */
+
+
+
 
 /* Responsive */
 
 /* Tablet and desktop styling */
 @media (min-width: 768px) {
 
-    .custom-container{
-        width: 90%;
+    .mt-md-40{
+        margin-top: 40px;
     }
 
     .g-md-20{
