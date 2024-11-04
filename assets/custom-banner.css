@@ -140,11 +140,45 @@
 }
   
 
+/* custom featured products */
+
+.custom-featured-products .product-image-wrapper {
+    position: relative;
+}
+
+.custom-featured-products .product-image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover; /* Ensures the image fills the container without distortion */
+}
+
+.custom-featured-products  .popover-wrapper{
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    justify-content: center;
+}
+
+
+
+
+.custom-featured-products .grid-item{
+    position: relative;
+}
+
+/* end of  custom featured products */
+
 /* Responsive */
 
 /* Tablet and desktop styling */
 @media (min-width: 768px) {
 
+    
     .col-md-4{
         grid-template-columns: repeat(3, 1fr); /* Three columns */
     }

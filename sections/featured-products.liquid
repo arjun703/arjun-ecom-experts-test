@@ -1,28 +1,27 @@
 <div
-  class="featured-products page-width"
+  class="custom-featured-products page-width"
   data-default-offset-top="{{ section.settings.popup_point_offset_from_top }}"
   data-default-offset-left="{{ section.settings.popup_point_offset_from_left }}"
 >
   <div class="d-grid col-6 col-md-4">
-    <div class="grid-item">
-      {% for block in section.blocks %}
+    {% for block in section.blocks %}
+      <div class="grid-item">
         <div class="featured-product-card">
           <div class="product-image-wrapper">
             {{ block.settings.product.featured_image | image_url: width: auto | image_tag }}
           </div>
           <div
             class="popover-wrapper"
-            data-default-offset-top="{{ block.settings.popup_point_offset_from_top }}"
-            data-default-offset-left="{{ block.settings.popup_point_offset_from_left }}"
+            style="transform: translate(-50%, -50%);   top: {{ block.settings.popup_point_offset_from_top }}%; left: {{ block.settings.popup_point_offset_from_left }}%"
           >
-            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M5.3457 1.04175V9.50329" stroke="black" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="round"/>
-              <path d="M1.11523 5.27246H9.57677" stroke="black" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="round"/>
+            <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4.1123 1.44995V7.49391" stroke="black" stroke-linecap="square" stroke-linejoin="round"></path>
+              <path d="M1.09033 4.47192H7.13429" stroke="black" stroke-linecap="square" stroke-linejoin="round"></path>
             </svg>
           </div>
         </div>
-      {% endfor %}
-    </div>
+      </div>
+    {% endfor %}
   </div>
 </div>
 
