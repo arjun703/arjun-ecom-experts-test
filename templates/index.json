@@ -45,8 +45,8 @@
           "type": "product_block",
           "settings": {
             "product": "chequered-red-shirt",
-            "popup_point_offset_from_top": 20,
-            "popup_point_offset_from_left": 23
+            "popup_point_offset_from_top": 17,
+            "popup_point_offset_from_left": 50
           }
         },
         "product_block_E4h7zU": {
