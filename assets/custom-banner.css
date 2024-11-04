@@ -131,10 +131,24 @@
     text-align: center;
 }
 
+.d-grid {
+    display: grid;    
+}
+
+.col-6{
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+}
+  
+
 /* Responsive */
 
 /* Tablet and desktop styling */
 @media (min-width: 768px) {
+
+    .col-md-4{
+        grid-template-columns: repeat(3, 1fr); /* Three columns */
+    }
+    
     .d-md-block{
         display: block;
     }
