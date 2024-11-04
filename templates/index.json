@@ -21,9 +21,75 @@
         "custom_banner_button_link": "shopify://collections",
         "custom_banner_bottom_text": "SUSTAINABLE, ETHICALLY MADE ACTIVEWEAR"
       }
+    },
+    "featured_products_QGH44m": {
+      "type": "featured-products",
+      "blocks": {
+        "product_block_wPk9kr": {
+          "type": "product_block",
+          "settings": {
+            "product": "black-leather-bag",
+            "popup_point_offset_from_top": 63,
+            "popup_point_offset_from_left": 21
+          }
+        },
+        "product_block_ggVAcV": {
+          "type": "product_block",
+          "settings": {
+            "product": "blue-silk-tuxedo",
+            "popup_point_offset_from_top": 50,
+            "popup_point_offset_from_left": 50
+          }
+        },
+        "product_block_r8jhey": {
+          "type": "product_block",
+          "settings": {
+            "product": "chequered-red-shirt",
+            "popup_point_offset_from_top": 20,
+            "popup_point_offset_from_left": 23
+          }
+        },
+        "product_block_E4h7zU": {
+          "type": "product_block",
+          "settings": {
+            "product": "classic-leather-jacket",
+            "popup_point_offset_from_top": 74,
+            "popup_point_offset_from_left": 44
+          }
+        },
+        "product_block_Xz84jm": {
+          "type": "product_block",
+          "settings": {
+            "product": "classic-varsity-top",
+            "popup_point_offset_from_top": 28,
+            "popup_point_offset_from_left": 33
+          }
+        },
+        "product_block_XDcwMT": {
+          "type": "product_block",
+          "settings": {
+            "product": "dark-denim-top",
+            "popup_point_offset_from_top": 20,
+            "popup_point_offset_from_left": 74
+          }
+        }
+      },
+      "block_order": [
+        "product_block_wPk9kr",
+        "product_block_ggVAcV",
+        "product_block_r8jhey",
+        "product_block_E4h7zU",
+        "product_block_Xz84jm",
+        "product_block_XDcwMT"
+      ],
+      "settings": {
+        "popup_point_offset_from_top": 50,
+        "popup_point_offset_from_left": 50
+      }
     }
   },
   "order": [
-    "custom_banner_MMGM6m"
+    "custom_banner_MMGM6m",
+    "featured_products_QGH44m"
   ]
 }
