@@ -29,8 +29,8 @@
           "type": "product_block",
           "settings": {
             "product": "black-leather-bag",
-            "popup_point_offset_from_top": 63,
-            "popup_point_offset_from_left": 21
+            "popup_point_offset_from_top": 56,
+            "popup_point_offset_from_left": 56
           }
         },
         "product_block_ggVAcV": {
